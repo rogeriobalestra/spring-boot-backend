@@ -12,6 +12,8 @@ import com.nelioalves.cursomc.domain.Produto;
 import com.nelioalves.cursomc.repositories.CategoriaRepository;
 import com.nelioalves.cursomc.repositories.ProdutoRepository;
 
+import antlr.collections.List;
+
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
 
@@ -39,8 +41,8 @@ public class CursomcApplication implements CommandLineRunner {
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
-		p1.getCategorias().addAll(Arrays.asList(cat1, cat2));
-		p1.getCategorias().addAll(Arrays.asList(cat1));
+		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
+		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
   
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
