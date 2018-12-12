@@ -16,7 +16,7 @@ public class CategoriaService {
 	private CategoriaRepository repo;
 	
 	
-	public Categoria buscar(Integer id) {
+	public Categoria find(Integer id) {
 		Optional<Categoria> categoria = repo.findById(id);
 			
 		return categoria.orElseThrow(() -> new ObjectNotFoundException(
@@ -26,6 +26,12 @@ public class CategoriaService {
 	
 	public Categoria insert(Categoria obj) {
 		obj.setId(null);// só pra garantir que o o id vem nulo, sendo assim garante que é um objeto novo.
+		return repo.save(obj);
+	}
+	
+	
+	public Categoria update(Categoria obj) {
+		find(obj.getId());
 		return repo.save(obj);
 	}
 	

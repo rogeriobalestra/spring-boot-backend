@@ -15,7 +15,7 @@ public class ClienteService {
 	private ClienteRepository clienteRepository;
 	
 	
-	public Cliente buscar(Integer id) {
+	public Cliente find(Integer id) {
 		
 		Optional<Cliente> obj = clienteRepository.findById(id);
 
